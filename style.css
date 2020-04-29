@@ -1,0 +1,127 @@
+/*
+
+Theme Name: Porto Child
+Template: porto
+
+*/
+.tax-product_author .content-area .term-description,
+.tax-product_publisher .content-area .term-description{
+	margin-bottom: 30px;
+	border-bottom: solid 1px #dfdfdf;
+}
+.archive-name p{
+	color: #313131;
+	font-family: Oswald;
+	font-weight: 600;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+.woocommerce-tabs h2.custom-taxonomy{
+	border: none !important;	
+	display: block;
+	margin:0;
+	font-size: 1em;
+}
+.woocommerce-tabs h2.custom-taxonomy a {
+    display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #313131;
+	padding: 15px !important;
+	line-height: 1.4;
+	font-size: 1em;
+	border-bottom: 1px solid #ddd;
+	margin:0
+}
+.woocommerce-tabs h2.custom-taxonomy a:before {
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    top: -5px;
+	content: '\e81c';
+	font-family: 'porto';
+	float: left;
+	margin-right: 10px;
+}
+.woocommerce-tabs h2.custom-taxonomy a:hover{
+	text-decoration: none;
+}
+.woocommerce-tabs h2.publication-date{
+	margin-bottom:0;
+	font-size: 1em;
+	line-height: 1.2;
+}
+.woocommerce-tabs h2.publication-date .publication-label{
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #313131;
+	padding: 15px !important;
+	line-height: 1.4;
+	font-size: 1em;
+	border-bottom: 1px solid #ddd;
+	margin:0;
+	cursor: pointer;
+	position:relative;
+}
+.woocommerce-tabs h2.publication-date .publication-label:before{
+	font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    top: -5px;
+	content: '\e81c';
+	font-family: 'porto';
+	float: left;
+	margin-right: 10px;
+}
+.woocommerce-tabs h2.publication-date .publication-label.active:before{
+	content: '\e81b';
+}
+.woocommerce-tabs h2.publication-date .date-value{
+	display: none;
+	padding:30px 0 15px;
+}
+.woocommerce-tabs h2.publication-date .publication-label.active{
+	border-bottom: solid 2px #ee3d43 !important;
+}
+.product-more-info p{
+	margin-bottom: 0;
+}
+.product-extract{
+	margin-bottom: 30px;
+}
+.product-extract a{
+	display: inline-block;
+	margin-right: 15px;
+}
+.product-extract a i{
+	margin-right: 10px;
+}
+ul.products li.product-col .woocommerce-loop-product__title{
+	white-space: normal;
+	line-height: 1.2em;
+	height: 3.6em;
+	font-family: 'Oswald';
+	font-weight: 600;
+	letter-spacing: 0;
+	color: #0e2f40;
+}
+.archive.woocommerce-page .archive-name p{
+	font-family: 'Oswald';
+	font-weight: 600;
+	letter-spacing: 0;
+	color: #0e2f40;
+	font-size: 18px;
+}
+.archive.woocommerce-page .term-description{
+	margin-bottom: 30px;
+	border-bottom: 1px solid #dfdfdf;
+}
+div.product-author a{
+	margin-bottom: 10px;
+	display: inline-block;
+}
+.product-author a:last-child .common{
+	display: none;
+}
+
