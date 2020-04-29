@@ -96,3 +96,18 @@ add_action( 'woocommerce_after_single_product_summary', 'porto_output_same_categ
 function porto_output_same_categories() {
     wc_get_template( 'single-product/same_categories.php');
 }
+
+
+add_action('woocommerce_single_product_summary','woo_custom_out_of_stock', 35);
+function woo_custom_out_of_stock() {
+	global $product;
+	$availability = $product->get_availability();
+
+	if ($availability['availability']) {
+?>
+    <form class="cart" action="<?php echo get_permalink( get_page_by_path( 'contact-us' ) );?>" method="post">
+        <button type="submit" class="button alt">Solicită actualizarea stocului sau retipărirea cărții</button>
+    </form>
+<?php
+    }
+}
