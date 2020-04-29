@@ -13,7 +13,7 @@ if ( empty( $product ) || ! $product->exists() ) {
 	return;
 }
 
-$term_ids = wp_get_post_terms( get_the_id(), 'product_author', array('fields' => 'ids') ); // array
+$cat_ids = wp_get_post_terms( get_the_id(), 'product_cat', array('fields' => 'ids') ); // array
 $args = array(
 	'post_type'           => 'product',
   'post_status'           => 'publish',
@@ -22,11 +22,20 @@ $args = array(
 	'posts_per_page'      => $porto_settings['product-related-count'],
 	'post__not_in'          => array( get_the_id() ),
 	'orderby'             => $orderby,
-	'tax_query'             => array( array(
-		'taxonomy'      => 'product_author',
-		'field'         => 'term_id',
-		'terms'         => $term_ids,
-	) )
+  'tax_query'             => array(
+    array(
+      'taxonomy'      => 'product_cat',
+      'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+      'terms'         => $cat_ids,
+      'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+    ),
+    array(
+      'taxonomy'      => 'product_visibility',
+      'field'         => 'slug',
+      'terms'         => 'exclude-from-catalog', // Possibly 'exclude-from-search' too
+      'operator'      => 'NOT IN'
+    )
+  )
 );
 
 $products = new WP_Query( $args );
@@ -49,7 +58,7 @@ if ( $products->have_posts() ) : ?>
 	<div class="related products">
 		<div class="<?php echo esc_attr( $container_class ); ?>">
 			<?php
-				$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Same author\'s', 'woocommerce' ) );
+				$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Same category\'s', 'woocommerce' ) );
 
 			if ( $heading ) :
 				?>

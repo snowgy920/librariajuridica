@@ -89,10 +89,10 @@ function porto_hook_4_product_title() {
 
 add_action( 'woocommerce_after_single_product_summary', 'porto_output_same_authors', 21 );
 function porto_output_same_authors() {
-    // wc_get_template( 'single-product/same_authors.php');
+    wc_get_template( 'single-product/same_authors.php');
 }
 
 add_action( 'woocommerce_after_single_product_summary', 'porto_output_same_categories', 21 );
 function porto_output_same_categories() {
-    // wc_get_template( 'single-product/same_authors.php');
+    wc_get_template( 'single-product/same_categories.php');
 }
