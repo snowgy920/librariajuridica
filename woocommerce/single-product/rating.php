@@ -91,8 +91,8 @@ $average      = $product->get_average_rating();
 </div>
 <div class="product-extract">
 	<?php
-	$extract_url = !empty(get_field('contents_extract_copy')) ? get_field('contents_extract_copy') : get_field('contents_extract');
-	$book_url = !empty(get_field('book_extract_copy')) ? get_field('book_extract_copy') : get_field('book_extract');
+	$extract_url = !empty(get_field('contents_extract_url')) ? get_field('contents_extract_url') : get_field('contents_extract');
+	$book_url = !empty(get_field('book_extract_url')) ? get_field('book_extract_url') : get_field('book_extract');
 	if (!empty($extract_url)){
 		?>
         <a href="<?php echo $extract_url?>" target="_blank"><i class="fa fa-download" aria-hidden="true"></i>Cuprins</a>
