@@ -113,3 +113,31 @@ function woo_custom_out_of_stock() {
 }
 
 require_once(dirname( __FILE__ ) . '/widgets/date_filter_list.php');
+add_filter( 'posts_clauses', 'pub_date_filter_post_clauses', 11, 2 );
+function pub_date_filter_post_clauses($args, $wp_query ) {
+    global $wpdb;
+
+    if ( ! $wp_query->is_main_query() || ( ! isset( $_GET['max_date'] ) && ! isset( $_GET['min_date'] ) ) ) {
+        return $args;
+    }
+
+    if ( ! strstr( $args['join'], 'date_meta' ) ) {
+        $args['join'] .= " LEFT JOIN {$wpdb->postmeta} date_meta ON $wpdb->posts.ID = date_meta.post_id AND date_meta.meta_key='publication_date' ";
+    }
+
+    if (!empty($_GET['min_date'])) {
+        $args['where'] .= $wpdb->prepare(
+            ' AND date_meta.meta_value >= STR_TO_DATE("%s", "%%d.%%m.%%Y")',
+            wp_unslash( $_GET['min_date'] )
+        );
+    }
+
+    if (!empty($_GET['max_date'])) {
+        $args['where'] .= $wpdb->prepare(
+            ' AND date_meta.meta_value <= STR_TO_DATE("%s", "%%d.%%m.%%Y")',
+            wp_unslash( $_GET['max_date'] )
+        );
+    }
+
+    return $args;
+}

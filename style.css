@@ -125,3 +125,6 @@ div.product-author a{
 	display: none;
 }
 
+.porto_widget_date_filter .form-control {
+	color: #ee3d43;
+}
