@@ -85,7 +85,7 @@ $average      = $product->get_average_rating();
 
 	if (!empty(get_field('updated_to'))){
 	?>
-    <p class="publication-date">Actualizat la: <?php the_field('updated_to'); ?></p>
+    <p class="publication-date">Actualizată la: <?php the_field('updated_to'); ?></p>
 	<?php } ?>
 
 </div>

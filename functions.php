@@ -111,3 +111,5 @@ function woo_custom_out_of_stock() {
 <?php
     }
 }
+
+require_once(dirname( __FILE__ ) . '/widgets/date_filter_list.php');

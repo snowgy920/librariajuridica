@@ -58,7 +58,7 @@ if ( $products->have_posts() ) : ?>
 	<div class="related products">
 		<div class="<?php echo esc_attr( $container_class ); ?>">
 			<?php
-				$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Same category\'s', 'woocommerce' ) );
+				$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'DIN ACEEAȘI CATEGORIE', 'woocommerce' ) );
 
 			if ( $heading ) :
 				?>

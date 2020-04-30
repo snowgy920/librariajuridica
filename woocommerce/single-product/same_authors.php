@@ -49,7 +49,7 @@ if ( $products->have_posts() ) : ?>
 	<div class="related products">
 		<div class="<?php echo esc_attr( $container_class ); ?>">
 			<?php
-				$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Same author\'s', 'woocommerce' ) );
+				$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'DE ACELAȘI AUTOR', 'woocommerce' ) );
 
 			if ( $heading ) :
 				?>
