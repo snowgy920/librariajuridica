@@ -84,10 +84,10 @@ class Porto_WC_Widget_Date_Filter extends WP_Widget {
 
 		echo '<form method="get" action="' . esc_url( $form_action ) . '">
 			<div class="fields">
-			<input type="text" class="form-control" name="filter_min_date" value="' . ( isset( $_GET['filter_min_date'] ) ? esc_attr( $_GET['filter_min_date'] ) : '' ) . '" placeholder="' . esc_attr( $min_date ) . '" data-min="' . esc_attr( apply_filters( 'woocommerce_date_filter_widget_min_amount', $min ) ) . '" placeholder="" /> <span>-</span>
-			<input type="text" class="form-control" name="filter_max_date" value="' . ( isset( $_GET['filter_max_date'] ) ? esc_attr( $_GET['filter_max_date'] ) : '' ) . '" placeholder="' . esc_attr( $max_date ) . '" data-max="' . esc_attr( apply_filters( 'woocommerce_date_filter_widget_max_amount', $max ) ) . '" placeholder="" />
+			<input type="text" class="form-control" name="min_date" value="' . ( isset( $_GET['min_date'] ) ? esc_attr( $_GET['min_date'] ) : '' ) . '" placeholder="' . esc_attr( $min_date ) . '" data-min="' . esc_attr( apply_filters( 'woocommerce_date_widget_min_amount', $min ) ) . '" placeholder="" /> <span>-</span>
+			<input type="text" class="form-control" name="max_date" value="' . ( isset( $_GET['max_date'] ) ? esc_attr( $_GET['max_date'] ) : '' ) . '" placeholder="' . esc_attr( $max_date ) . '" data-max="' . esc_attr( apply_filters( 'woocommerce_date_widget_max_amount', $max ) ) . '" placeholder="" />
 			<button type="submit" class="button">' . esc_html__( 'Filter', 'woocommerce' ) . '</button>
-			' . ( function_exists( 'wc_query_string_form_fields' ) ? wc_query_string_form_fields( null, array( 'filter_min_date', 'filter_max_date' ), '', true ) : '' ) . '
+			' . ( function_exists( 'wc_query_string_form_fields' ) ? wc_query_string_form_fields( null, array( 'min_date', 'max_date' ), '', true ) : '' ) . '
 			</div>
 		</form>';
 
